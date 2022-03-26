@@ -1,25 +1,29 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { MovieCard } from './MovieCard'
+import { useQuery } from 'react-query'
 
-export const MovieList = () => {
-
-    const [movies, setMovies] = useState([]);
+export const MovieList = (props) => {
 
     const fetchMovies = async () => {
-        const url = "https://api.themoviedb.org/3/trending/all/day?api_key=b57b8d755f0a091b919dccd91fb70e7f&language=en";
+        const url = props.url;
         const response = await fetch(url);
-        const json = await response.json();
-        setMovies(json.results);
+        return response.json();
     }
 
-    useEffect(() => {
-        fetchMovies();
-    }, [])
+    const { data, status } = useQuery('movie', fetchMovies);
+
+    if (status === "loading") {
+        return <div>Loading...</div>;
+    }
+
+    if (status === "error") {
+        return <div>Error</div>;
+    }
 
     return (
         <div className="container">
             <div className="row">
-                {movies.map(movie => {
+                {data.results.map(movie => {
                     return <MovieCard
                         key={movie.id}
                         movie_id={movie.id}

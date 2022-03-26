@@ -26,7 +26,7 @@ export const MovieDetails = () => {
     }, [])
 
     return (
-        <div className="container">
+        <div className="container movie_details">
             
             <h1>{details.title}</h1>
             <h2>{details.tagline}</h2>
