@@ -23,11 +23,13 @@ export const Signup = () => {
         pwd.value = null;
         cpwd.value = null;
         other.value = null;
+        male.checked = false;
+        female.checked = false;
+
     }
 
 
     // Things I wish to be added
-    // when clicking reset button all are getting null except the Gender option
     // Can we add logo  of each community (fb,google,discord) in each button
 
     return (
