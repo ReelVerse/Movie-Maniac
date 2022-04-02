@@ -23,11 +23,11 @@ export const Footer = () => {
                     <h3>Links <div className="underline">
                         <span></span></div></h3>
                     <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Services</a></li>
-                        <li><a href="">About Us</a></li>
-                        <li><a href="">Features</a></li>
-                        <li><a href="">Contacts</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Contacts</a></li>
                     </ul>
                 </div>
                 <div className="col">

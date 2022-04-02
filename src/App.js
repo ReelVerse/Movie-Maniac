@@ -8,6 +8,7 @@ import { MovieDetails } from './components/MovieDetails';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Search } from './components/Search';
 import { Footer } from './components/Footer';
+import { Signup } from './components/Signup';
 
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
     return <div>
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Search />}></Route>
+                <Route path="/signup" element={<Signup />}></Route>
+                <Route path="/home" element={<Search />}></Route>
                 <Route path="/details/:movie_id" element={<MovieDetails />}></Route>
             </Routes>
         </BrowserRouter>
