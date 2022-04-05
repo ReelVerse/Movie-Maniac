@@ -1,9 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
-import { Link } from 'react-router-dom';
-import { FacebookLogin } from 'react-facebook-login';
-import Facebook from './Facebook';
+import { Facebook } from './Facebook';
 export const Signup = () => {
   const navigate = useNavigate();
 

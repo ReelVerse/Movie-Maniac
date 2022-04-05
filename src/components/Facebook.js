@@ -1,59 +1,58 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import FacebookLogin from "react-facebook-login";
+import { useNavigate } from "react-router-dom";
 
-export default class Facebook extends Component {
-  state = {
-    isLoggedIn: false,
-    userID: "",
-    name: "",
-    email: "",
-    picture: ""
-  };
+export const Facebook = () => {
+  const navigate = useNavigate();
 
-  responseFacebook = response => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userID, setUserID] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [picture, setPicture] = useState("");
+
+    
+  const responseFacebook = response => {
     // console.log(response);
 
-    this.setState({
-      isLoggedIn: true,
-      userID: response.userID,
-      name: response.name,
-      email: response.email,
-      picture: response.picture.data.url
-    });
+    setIsLoggedIn(true);
+    setUserID(response.userID);
+    setName(response.name);
+    setEmail(response.email);
+    setPicture(response.picture.data.url);
+
+    console.log("Redirecting in 2 seconds");
+    setTimeout(() => {
+      navigate("/home");
+    }, 2000);
   };
 
-  componentClicked = () => console.log("clicked");
+  const componentClicked = () => console.log("clicked");
 
-  render() {
-    let fbContent;
+  let fbContent = (isLoggedIn) ? (
+    <div
+      style={{
+        width: "400px",
+        margin: "auto",
+        background: "#f4f4f4",
+        padding: "20px"
+      }}
+    >
+      <img src={picture} alt={name} />
+      <h2>Welcome {name}</h2>
+      Email: {email}
+    </div>
+  ) : (
+    <FacebookLogin
+      appId="386658159994023"
+      autoLoad={true}
+      fields="name,email,picture"
+      onClick={componentClicked}
+      callback={responseFacebook}
+    />
+  )
 
-    if (this.state.isLoggedIn) {
-      fbContent = (
-        <div
-          style={{
-            width: "400px",
-            margin: "auto",
-            background: "#f4f4f4",
-            padding: "20px"
-          }}
-        >
-          <img src={this.state.picture} alt={this.state.name} />
-          <h2>Welcome {this.state.name}</h2>
-          Email: {this.state.email}
-        </div>
-      );
-    } else {
-      fbContent = (
-        <FacebookLogin
-          appId="386658159994023"
-          autoLoad={true}
-          fields="name,email,picture"
-          onClick={this.componentClicked}
-          callback={this.responseFacebook}
-        />
-      );
-    }
-
-    return <div>{fbContent}</div>;
-  }
+  return (
+    <div>{fbContent}</div>
+  )
 }
