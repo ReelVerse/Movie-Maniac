@@ -4,6 +4,7 @@ import './css/MovieCard.css'
 import './css/MovieDetails.css'
 import './css/Search.css'
 
+
 import { MovieDetails } from './components/MovieDetails';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Search } from './components/Search';

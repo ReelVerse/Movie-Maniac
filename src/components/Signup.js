@@ -1,6 +1,9 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
+import { Link } from 'react-router-dom';
+import { FacebookLogin } from 'react-facebook-login';
+import Facebook from './Facebook';
 export const Signup = () => {
   const navigate = useNavigate();
 
@@ -74,7 +77,7 @@ export const Signup = () => {
                   flexDirection: "column"
                 }}>
 
-                  <button type="button" className="btn btn-primary btn-lg my-3">Sign up with Facebook</button>
+                  <Facebook />
                   <button type="button" className="btn btn-danger btn-lg my-3">Sign up with Google </button>
                 </div>
                 <div className="col-xl-6">
