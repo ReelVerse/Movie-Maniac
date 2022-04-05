@@ -24,6 +24,7 @@ function erase() {
 }
 
 
+
 // Things I wish to be added
 // when clicking reset button all are getting null except the Gender option
 // Can we add logo  of each community (fb,google,discord) in each button
