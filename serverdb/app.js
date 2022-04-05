@@ -35,7 +35,7 @@ app
     res.render("home", { user: req.session.user });
   });
 
-// route for handling post requirests
+// route for handling post requests
 app
   .post("/login", async (req, res) => {
     const { email, password } = req.body;
@@ -63,13 +63,14 @@ app
   })
   .post("/register", async (req, res) => {
     const { email, password } = req.body;
+    console.log(email, password);
 
-    // check for missing filds
-    if (!email || !password) return res.send("Please enter all the fields");
+    // check for missing fields
+    if (!email || !password) return res.status(400).send("Please enter all the fields");
 
     const doesUserExitsAlreay = await User.findOne({ email });
 
-    if (doesUserExitsAlreay) return res.send("A user with that email already exits please try another one!");
+    if (doesUserExitsAlreay) return res.status(400).send("A user with that email already exits please try another one!");
 
     // lets hash the password
     const hashedPassword = await bcrypt.hash(password, 12);
@@ -78,8 +79,8 @@ app
     latestUser
       .save()
       .then(() => {
-        res.send("registered account!");
-        res.redirect("/login");
+        res.status(200).send("registered account!");
+        // res.redirect("/login");
       })
       .catch((err) => console.log(err));
   });
@@ -91,7 +92,7 @@ app.get("/logout", authenticateUser, (req, res) => {
 });
 
 // server config
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server started listening on port: ${PORT}`);
 });
