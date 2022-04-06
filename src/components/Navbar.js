@@ -21,11 +21,10 @@ export const Navbar = () => {
       </div>
 
       <div className="nav-items">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">GoPro</a></li>
-        <li><a href="#">Watchlist</a></li>
-        <li><a href="#">Sign In</a></li>
-        <li><a href="#">En</a></li>
+        <li><Link to="/home">Home</Link></li>
+        <li><Link to="/gallery">Gallery</Link></li>
+        <li><Link to="/aboutus">AboutUs</Link></li>
+        <li><Link to="/contactus">Contact Us</Link></li>
       </div>
       <div className="search-icon">
         <span className="fas fa-search"></span>

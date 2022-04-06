@@ -1,5 +1,5 @@
 footer {
-    width: 110%;
+    width: 100%;
     position: relative;
     bottom: 0;
     background: linear-gradient(to right, rgb(0, 0, 0), #434b77);
@@ -124,7 +124,7 @@ footer .underline {
     background: #767676;
     border-radius: 3px;
     position: absolute;
-    top: 25px;
+    top: 32px;
     left: 0;
     overflow: hidden;
 }

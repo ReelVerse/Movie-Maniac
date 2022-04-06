@@ -1,33 +1,36 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
+import logo from "../images/logo.jpeg"
 
 export const Footer = () => {
     return (
         <footer className="footer_component">
             <div className="row">
                 <div className="col">
-                    <img src="logo.jpeg" className="logo" />
-                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab libero tempora dolor tempore saepe sunt officia consequuntur mollitia, nemo, odio, harum accusamus quod iste labore aliquid doloribus quas facilis quasi?
+                    <img src={logo} className="logo" /><br />
+                    Movie Maniac is an online database of information related to films, television series, home videos, video games, and streaming content online - including cast, production crew and personal biographies, plot summaries, trivia and ratings.
                 </div>
                 <div className="col">
                     <h3 >Office <div className="underline">
                         <span></span>
                     </div></h3>
-                    <p>A-139</p>
-                    <p> Plaza building Rohit Nagar </p>
-                    <p>New Delhi,INDIA </p>
-                    <p>PINCODE - 100201</p>
-                    <p className="email-id">MovieMania@outlook.com</p>
-                    <h4>+91-9579579676</h4>
+                    <p>Indian Institute of Information Technology, Lucknow</p>
+                    <p>Chak Ganjaria</p>
+                    <p>C. G. city</p>
+                    <p>Uttar Pradesh</p>
+                    <p>226002</p>
+                    <p className="email-id">MovieManiac@outlook.com</p>
+                    <h4>+91 75900 98026</h4>
                 </div>
                 <div className="col">
                     <h3>Links <div className="underline">
                         <span></span></div></h3>
                     <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/">Services</a></li>
-                        <li><a href="/">About Us</a></li>
-                        <li><a href="/">Features</a></li>
-                        <li><a href="/">Contacts</a></li>
+                        <li><Link to="/home">Home</Link></li>
+                        <li><Link to="/gallery">Gallery</Link></li>
+                        <li><Link to="/aboutus">About Us</Link></li>
+                        <li><Link to="/contactus">Contact Us</Link></li>
                     </ul>
                 </div>
                 <div className="col">
@@ -50,7 +53,7 @@ export const Footer = () => {
                 </div>
             </div>
             <hr />
-            <p className="copyright">MovieMania 2021 - All Rights Reserved</p>
+            <p className="copyright">&#169; Movie Maniac 2022 - All Rights Reserved</p>
         </footer>
     )
 }

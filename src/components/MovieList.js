@@ -1,6 +1,7 @@
 import React from 'react'
 import { MovieCard } from './MovieCard'
 import { useQuery } from 'react-query'
+import { Carousel } from './Carousel'
 
 export const MovieList = (props) => {
 
@@ -22,6 +23,9 @@ export const MovieList = (props) => {
 
     return (
         <div className="container">
+
+            <Carousel />
+
             <div className="row">
                 {data.results.map(movie => {
                     return <MovieCard

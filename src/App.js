@@ -4,6 +4,8 @@ import './css/MovieCard.css'
 import './css/MovieDetails.css'
 import './css/Search.css'
 import './css/Navbar.css'
+import './css/ContactUs.css'
+import './css/AboutUs.css'
 
 
 import { MovieDetails } from './components/MovieDetails';
@@ -14,6 +16,8 @@ import { Signup } from './components/Signup';
 import { Login } from './components/Login';
 import { Navbar } from './components/Navbar';
 import { Welcome } from './components/Welcome';
+import { ContactUs } from './components/ContactUs';
+import { AboutUs } from './components/AboutUs';
 
 
 function App() {
@@ -26,6 +30,9 @@ function App() {
                 <Route path="/login" element={<Login />}></Route>
                 <Route path="/home" element={<><Welcome /><Search /></>}></Route>
                 <Route path="/details/:movie_id" element={<MovieDetails />}></Route>
+                <Route path="/contactus" element={<ContactUs />}></Route>
+                <Route path="/aboutus" element={<AboutUs />}></Route>
+
             </Routes>
             <Footer />
         </BrowserRouter>
