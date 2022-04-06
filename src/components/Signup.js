@@ -91,7 +91,6 @@ export const Signup = () => {
                 }}>
 
                   <Facebook />
-                  <button type="button" className="btn btn-danger btn-lg my-3">Sign up with Google </button>
                 </div>
                 <div className="col-xl-6">
                   <div className="card-body p-md-5 text-black">
