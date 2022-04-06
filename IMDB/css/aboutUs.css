@@ -184,7 +184,7 @@ a span:nth-child(4){
 /* Bootstrap contact us */
 .template-card{
     background-color: #010505;
-    width: 85%;
+    /* width: 85%; */
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-row-gap: 12px;
@@ -196,12 +196,13 @@ a span:nth-child(4){
     width: 100%;
     display: grid;
     justify-content: space-evenly;
-    margin-left: 2em;
+    margin-left: 4em;
     grid-template-columns: 1fr 1fr 1fr ;
     
 }
 .block_2{
     display: grid;
+    
     grid-template-columns: 1fr 1fr 1fr 1fr ;
     grid-column-gap: 12px;
 }
