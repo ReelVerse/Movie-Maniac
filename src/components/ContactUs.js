@@ -1,4 +1,5 @@
 import React from 'react'
+
 import insta_svg from "../images/social_media/instagram.svg"
 import fb_svg from "../images/social_media/facebook.svg"
 import github_svg from "../images/social_media/github.svg"
@@ -36,7 +37,7 @@ export const ContactUs = () => {
               <label htmlFor="myText">MESSAGE</label>
             </div>
 
-            <button className="button" role="button">Submit</button>
+            <button className="button">Submit</button>
 
           </form>
         </div>
@@ -44,19 +45,19 @@ export const ContactUs = () => {
         <div className="footer">
 
           <div className="social">
-            <a><img src={insta_svg} alt="" height="45px" width="45px" /> </a>
+            <a target="_blank" href="https://www.instagram.com/iiitlucknow"><img src={insta_svg} alt="" height="45px" width="45px" /> </a>
           </div>
           <div className="social">
-            <a> <img src={fb_svg} alt="" height="45px" width="45px" /> </a>
+            <a target="_blank" href="https://www.facebook.com/iiitlucknow/"> <img src={fb_svg} alt="" height="45px" width="45px" /> </a>
           </div>
           <div>
-            <h3 className="topic" >Movie Maniac</h3>
+            <h3 className="hrefpic" >Movie Maniac</h3>
           </div>
           <div className="social">
-            <a> <img src={github_svg} alt="" height="45px" width="45px" /></a>
+            <a target="_blank" href="https://github.com/ReelVerse/Movie-Maniac"> <img src={github_svg} alt="" height="45px" width="45px" /></a>
           </div>
           <div className="social">
-            <a> <img src={linkedin_svg} alt="" height="45px" width="45px" />
+            <a target="_blank" href="https://www.linkedin.com/school/iiitl"> <img src={linkedin_svg} alt="" height="45px" width="45px" />
             </a>
           </div>
 

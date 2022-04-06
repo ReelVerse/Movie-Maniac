@@ -6,6 +6,7 @@ import './css/Search.css'
 import './css/Navbar.css'
 import './css/ContactUs.css'
 import './css/AboutUs.css'
+import './css/Gallery.css'
 
 
 import { MovieDetails } from './components/MovieDetails';
@@ -18,6 +19,7 @@ import { Navbar } from './components/Navbar';
 import { Welcome } from './components/Welcome';
 import { ContactUs } from './components/ContactUs';
 import { AboutUs } from './components/AboutUs';
+import { Gallery } from './components/Gallery';
 
 
 function App() {
@@ -32,6 +34,7 @@ function App() {
                 <Route path="/details/:movie_id" element={<MovieDetails />}></Route>
                 <Route path="/contactus" element={<ContactUs />}></Route>
                 <Route path="/aboutus" element={<AboutUs />}></Route>
+                <Route path="/gallery" element={<Gallery />}></Route>
 
             </Routes>
             <Footer />

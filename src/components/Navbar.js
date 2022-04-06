@@ -13,7 +13,7 @@ export const Navbar = () => {
   return (
     <nav>
       <div className="menu-icon">
-        <span className="fas fa-bars"></span>
+        <span className="fa fa-bars"></span>
       </div>
       <div className="logo">
         <img src={require('../images/logo.jpg')} alt="" height="50px" width="50px" />
@@ -27,10 +27,10 @@ export const Navbar = () => {
         <li><Link to="/contactus">Contact Us</Link></li>
       </div>
       <div className="search-icon">
-        <span className="fas fa-search"></span>
+        <span className="fa fa-search"></span>
       </div>
       <div className="cancel-icon">
-        <span className="fas fa-times"></span>
+        <span className="fa fa-times"></span>
       </div>
       <form action="#">
         <input type="search" className="search-data" placeholder="Search" required />
