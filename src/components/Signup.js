@@ -15,7 +15,7 @@ export const Signup = () => {
     let cpwd = document.getElementById("form3Example90")
     let male = document.getElementById("maleGender")
     let female = document.getElementById("femaleGender")
-    let other = document.getElementById("otherGender")
+    let Other = document.getElementById("otherGender")
 
     first.value = null;
     last.value = null;
@@ -24,9 +24,9 @@ export const Signup = () => {
     email.value = null;
     pwd.value = null;
     cpwd.value = null;
-    other.value = null;
     male.checked = false;
     female.checked = false;
+    Other.checked = false;
 
   }
 
