@@ -35,38 +35,40 @@ app
     res.render("home", { user: req.session.user });
   });
 
+
 // route for handling post requests
 app
   .post("/login", async (req, res) => {
     const { email, password } = req.body;
 
     // check for missing filds
-    if (!email || !password) return res.send("Please enter all the fields");
+    if (!email || !password) return res.status(400).send("Please enter all the fields");
 
     const doesUserExits = await User.findOne({ email });
 
-    if (!doesUserExits) return res.send("invalid username or password");
+    if (!doesUserExits) return res.status(400).send(`User with email ${email} doesn't exists. Please Sign up first.`);
 
     const doesPasswordMatch = await bcrypt.compare(
       password,
       doesUserExits.password
     );
 
-    if (!doesPasswordMatch) return res.send("invalid useranme or password");
+    if (!doesPasswordMatch) return res.status(400).send("Wrong password");
 
     // else he\s logged in
     req.session.user = {
       email,
     };
+    res.status(200).send("Login successful");
 
-    res.redirect("/home");
+    // res.redirect("/home");
   })
   .post("/register", async (req, res) => {
-    const { email, password } = req.body;
-    console.log(email, password);
+    const { firstName, lastName, email, password, gender, timestamp } = req.body;
+    console.log(req.body);
 
     // check for missing fields
-    if (!email || !password) return res.status(400).send("Please enter all the fields");
+    if (!firstName || !lastName || !email || !password || !gender) return res.status(400).send("Please enter all the required fields");
 
     const doesUserExitsAlreay = await User.findOne({ email });
 
@@ -74,7 +76,7 @@ app
 
     // lets hash the password
     const hashedPassword = await bcrypt.hash(password, 12);
-    const latestUser = new User({ email, password: hashedPassword });
+    const latestUser = new User({ firstName, lastName, email, password: hashedPassword, gender, timestamp });
 
     latestUser
       .save()
@@ -83,6 +85,16 @@ app
         // res.redirect("/login");
       })
       .catch((err) => console.log(err));
+  })
+  .post("/fetchUser", async (req, res) => {
+    const { email } = req.body;
+    const user = await User.findOne({ email });
+    if (!user) {
+      console.log(user)
+      return res.status(404).send("User not found");
+    } else {
+      return res.status(200).send(user);
+    }
   });
 
 //logout

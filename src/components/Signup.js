@@ -33,11 +33,26 @@ export const Signup = () => {
   const submit = async (e) => {
     e.preventDefault();
 
+    let first = document.getElementById("form3Example1m").value
+    let last = document.getElementById("form3Example1n").value
     let email = document.getElementById("form3Example8").value;
     let password = document.getElementById("form3Example9").value;
+    let male = document.getElementById("maleGender")
+    let female = document.getElementById("femaleGender")
+    let other = document.getElementById("otherGender")
 
+    let gender;
+    if (male.checked) {
+      gender = "male";
+    } else if (female.checked) {
+      gender = "female";
+    } else if (other.checked) {
+      gender = "other";
+    }
 
-    const url_encoded_body = `email=${email}&password=${password}`;
+    const timestamp = new Date().toGMTString();
+
+    const url_encoded_body = `firstName=${first}&lastName=${last}&email=${email}&password=${password}&gender=${gender}&timestamp=${timestamp}`;
 
     const response = await fetch("http://localhost:5000/register", {
       method: 'POST',
@@ -131,19 +146,19 @@ export const Signup = () => {
                         <h6 className="mb-0 me-4">Gender: </h6>
 
                         <div className="form-check form-check-inline mb-0 me-4">
-                          <input className="form-check-input" type="radio" name="inlineRadioOptions"
+                          <input className="form-check-input" type="radio" name="gender"
                             id="femaleGender" value="option1" />
                           <label className="form-check-label" htmlFor="femaleGender">Female</label>
                         </div>
 
                         <div className="form-check form-check-inline mb-0 me-4">
-                          <input className="form-check-input" type="radio" name="inlineRadioOptions"
+                          <input className="form-check-input" type="radio" name="gender"
                             id="maleGender" value="option2" />
                           <label className="form-check-label" htmlFor="maleGender">Male</label>
                         </div>
 
                         <div className="form-check form-check-inline mb-0">
-                          <input className="form-check-input" type="radio" name="inlineRadioOptions"
+                          <input className="form-check-input" type="radio" name="gender"
                             id="otherGender" value="option3" />
                           <label className="form-check-label" htmlFor="otherGender">Other</label>
                         </div>
