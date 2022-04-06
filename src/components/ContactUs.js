@@ -1,4 +1,5 @@
 import React from 'react'
+import emailjs from 'emailjs-com'
 
 import insta_svg from "../images/social_media/instagram.svg"
 import fb_svg from "../images/social_media/facebook.svg"
@@ -6,6 +7,17 @@ import github_svg from "../images/social_media/github.svg"
 import linkedin_svg from "../images/social_media/linkedin.svg"
 
 export const ContactUs = () => {
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs.sendForm('service_1z0h88b', 'template_poch1az', e.target, 'Kx0Pz2aYJqYp2JQ9B')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  }
+
   return (
 
     <div className="contact_us">
@@ -16,28 +28,29 @@ export const ContactUs = () => {
           </div>
         </div>
         <div className="main_2">
-          <form action="" className="form">
+          <form action="" className="form" onSubmit={sendEmail}>
             <div className="data">
-              <input type="text" id="myFirstName" placeholder="Name" />
-              <label htmlFor="myFirstName">First Name</label>
+              <input type="text" id="myName" placeholder="Name" name='name' />
+              <label htmlFor="myFirstName">Name</label>
             </div>
             <br />
-            <div className="data">
-              <input type="text" id="myLast_Name" placeholder="Last Name" />
-              <label htmlFor="myLast_Name">Last Name</label>
-            </div>
             <br />
             <div className="data">
-              <input type="email" id="myEmail" placeholder="Email" />
+              <input type="email" id="myEmail" placeholder="Email" name='email' />
               <label htmlFor="myEmail">E-mail</label>
             </div>
             <br />
             <div className="data">
-              <textarea name="myText" id="myText" cols="30" rows="10" placeholder="Message"></textarea>
+              <input type="password" id="myPassword" placeholder="Password" name='password' />
+              <label htmlFor="myEmail">Password</label>
+            </div>
+            <br />
+            <div className="data">
+              <textarea id="myText" cols="30" rows="10" placeholder="Message" name="message"></textarea>
               <label htmlFor="myText">MESSAGE</label>
             </div>
 
-            <button className="button">Submit</button>
+            <input type="submit" />
 
           </form>
         </div>
