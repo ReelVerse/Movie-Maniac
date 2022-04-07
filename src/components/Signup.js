@@ -99,7 +99,7 @@ export const Signup = () => {
 
                       <h3 className="mb-5 text-uppercase "
                         style={{ color: "rgba(43, 70, 226, 0.699)", fontWeight: "bold" }}>
-                        Sign UP TO Reel-Verse</h3>
+                        Sign UP TO Movie-Maniac</h3>
 
                       <div className="row">
                         <div className="col-md-6 mb-4">

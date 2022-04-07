@@ -58,7 +58,6 @@ export const Login = () => {
                 }}>
 
                   <Facebook />
-                  <button type="button" className="btn btn-danger btn-lg my-3">Sign up with Google </button>
                 </div>
                 <div className="col-xl-6">
                   <div className="card-body p-md-5 text-black">
@@ -67,7 +66,7 @@ export const Login = () => {
 
                       <h3 className="mb-5 text-uppercase "
                         style={{ color: "rgba(43, 70, 226, 0.699)", fontWeight: "bold" }}>
-                        LOGIN to Reel-Verse</h3>
+                        LOGIN to Movie-Maniac</h3>
 
                       <div className="form-outline mb-4">
                         <input type="text" id="form3Example8" className="form-control form-control-lg" name="email" />
