@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const cookieSession = require("cookie-session");
 const bcrypt = require("bcrypt");
 
+require("dotenv").config();
+
 const User = require("./models/User");
 
 const authenticateUser = require("./middlewares/authenticateUser");
